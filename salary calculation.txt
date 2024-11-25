@@ -1,0 +1,20 @@
+# Employee Salary Calculation in Python
+
+# Function to calculate the net salary
+def calculate_net_salary(basic_pay, allowances, deductions, taxes):
+    gross_salary = basic_pay + allowances
+    total_deductions = deductions + (gross_salary * taxes / 100)
+    net_salary = gross_salary - total_deductions
+    return net_salary
+
+# Input from the user
+basic_pay = float(input("Enter the basic pay: "))
+allowances = float(input("Enter the total allowances: "))
+deductions = float(input("Enter the total deductions: "))
+taxes = float(input("Enter the applicable taxes percentage: "))
+
+# Calculate net salary
+net_salary = calculate_net_salary(basic_pay, allowances, deductions, taxes)
+
+# Display the result
+print(f"The net salary is: {net_salary:.2f}")
